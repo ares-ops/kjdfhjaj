@@ -1,0 +1,9 @@
+export const CONFIG = {
+  TOKEN_MINT_ADDRESS: "C4dF2xjCgByPdBb7QqXczguAS5xs8JpsHBioscod9Nod",
+  TOKEN_DECIMALS: 6,
+  TOKEN_TAX: 3,
+  STAKING_CONTRACT_ADDRESS: "DFgDg9Mc69FcWcsSHTPimE35x3W8uGdAZGCGWSeseFWh",
+  CONFIG_PDA_SEED: "config-pda-1",
+  CONFIG_ATA_SEED: "config-ata-1",
+  ADMINS: [""],
+};

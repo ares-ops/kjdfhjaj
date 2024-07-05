@@ -1,0 +1,29 @@
+Install anchor cli  (It will work on Linux and Macos). For windows, we can use wdsl
+https://www.anchor-lang.com/docs/installation
+
+You can either run commands in attached project. If it gives error due to some compatibility issue, create a new project
+----------------------------------------------------------------------------------------------------------------------
+For Existing Project:
+
+Run "anchor build"
+Run "anchor deploy"
+
+----------------------------------------------------------------------------------------------------------------------
+For New Project:
+
+anchor init ai_chain_coin_staking.
+Copy programs/token-2022-staking/src/lib.rs into programs/ai_chain_coin_staking/src/lib.rs
+Copy dependencies section from programs/token-2022-staking/cargo.toml into programs/ai_chain_coin_staking/cargo.toml
+
+Run "anchor build"
+Run "anchor deploy"
+----------------------------------------------------------------------------------------------------------------------
+Copy target/idl/ai_chain_coin_staking.json, rename it to "idl.json" and paste in websiteroot/scr/idl.
+Copy Contract Address from lib.rs (Inside Declare Id) to websiteroot/src/utils/config
+
+In website:
+npm install
+npm start
+
+
+

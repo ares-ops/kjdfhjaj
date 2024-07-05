@@ -1,0 +1,891 @@
+{
+  "address": "DFgDg9Mc69FcWcsSHTPimE35x3W8uGdAZGCGWSeseFWh",
+  "metadata": {
+    "name": "token_2022_staking",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "This is staking program with token 2022"
+  },
+  "instructions": [
+    {
+      "name": "claim_rewards",
+      "docs": [
+        "*! 7. CLAIM REWARDS"
+      ],
+      "discriminator": [
+        4,
+        144,
+        132,
+        71,
+        116,
+        23,
+        151,
+        80
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  112,
+                  100,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "config_ata",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  97,
+                  116,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_stake_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_ata",
+          "writable": true
+        },
+        {
+          "name": "token_mint"
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        }
+      ],
+      "args": [
+        {
+          "name": "config_pda_bump",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "deposit_rewards",
+      "docs": [
+        "*! 3. DEPOSIT TOKENS INTO CONTRACT"
+      ],
+      "discriminator": [
+        52,
+        249,
+        112,
+        72,
+        206,
+        161,
+        196,
+        1
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  112,
+                  100,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "config_ata",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  97,
+                  116,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "depositor_ata",
+          "writable": true
+        },
+        {
+          "name": "token_mint"
+        },
+        {
+          "name": "depositor",
+          "signer": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "initialize",
+      "docs": [
+        "*! 1. INITIALIZE"
+      ],
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  112,
+                  100,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "config_ata",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  97,
+                  116,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_mint"
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "associated_token_program",
+          "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+        }
+      ],
+      "args": [
+        {
+          "name": "min_stake_period",
+          "type": "i64"
+        },
+        {
+          "name": "decimals",
+          "type": "u8"
+        },
+        {
+          "name": "tax_percentage",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "stake",
+      "docs": [
+        "*! 5a. STAKE"
+      ],
+      "discriminator": [
+        206,
+        176,
+        202,
+        18,
+        200,
+        209,
+        179,
+        108
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  112,
+                  100,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "config_ata",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  97,
+                  116,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_stake_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_ata",
+          "writable": true
+        },
+        {
+          "name": "token_mint"
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "stake_reallocx",
+      "docs": [
+        "*! 5b. STAKE"
+      ],
+      "discriminator": [
+        170,
+        121,
+        60,
+        202,
+        48,
+        154,
+        29,
+        90
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  112,
+                  100,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "config_ata",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  97,
+                  116,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_stake_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_ata",
+          "writable": true
+        },
+        {
+          "name": "token_mint"
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "unstake",
+      "docs": [
+        "*! 6. UNSTAKE"
+      ],
+      "discriminator": [
+        90,
+        95,
+        107,
+        42,
+        205,
+        124,
+        50,
+        225
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  112,
+                  100,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "config_ata",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  97,
+                  116,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_stake_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_ata",
+          "writable": true
+        },
+        {
+          "name": "token_mint"
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        }
+      ],
+      "args": [
+        {
+          "name": "config_pda_bump",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "update_min_stake_period",
+      "docs": [
+        "*! 2. UPDATE MINIMUM STAKE PERIOD (Admin Only)"
+      ],
+      "discriminator": [
+        195,
+        206,
+        66,
+        36,
+        77,
+        30,
+        123,
+        177
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  112,
+                  100,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "min_stake_period",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "withdraw",
+      "docs": [
+        "*! 4. WITHDRAW TOKENS FROM CONTRACT (Admin Only)"
+      ],
+      "discriminator": [
+        183,
+        18,
+        70,
+        156,
+        148,
+        109,
+        161,
+        34
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  112,
+                  100,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "config_ata",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103,
+                  45,
+                  97,
+                  116,
+                  97,
+                  45,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority_ata",
+          "writable": true
+        },
+        {
+          "name": "token_mint"
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        }
+      ],
+      "args": [
+        {
+          "name": "config_pda_bump",
+          "type": "u8"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Config",
+      "discriminator": [
+        155,
+        12,
+        170,
+        224,
+        30,
+        250,
+        204,
+        130
+      ]
+    },
+    {
+      "name": "UserStakeAccount",
+      "discriminator": [
+        167,
+        87,
+        153,
+        81,
+        129,
+        95,
+        15,
+        213
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "Unauthorized",
+      "msg": "Unauthorized"
+    },
+    {
+      "code": 6001,
+      "name": "InsufficientRewards",
+      "msg": "Insufficient rewards in the contract account"
+    },
+    {
+      "code": 6002,
+      "name": "TokenMintMismatch",
+      "msg": "The token mint address does not match the config."
+    },
+    {
+      "code": 6003,
+      "name": "NoTransferFeeConfig",
+      "msg": "No transfer fee configuration found for this mint."
+    }
+  ],
+  "types": [
+    {
+      "name": "Config",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "min_stake_period",
+            "type": "i64"
+          },
+          {
+            "name": "token_mint_address",
+            "type": "pubkey"
+          },
+          {
+            "name": "decimals",
+            "type": "u8"
+          },
+          {
+            "name": "tax_percentage",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StakeRecord",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UserStakeAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "stakes",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "StakeRecord"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
