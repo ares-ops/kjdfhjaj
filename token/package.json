@@ -1,0 +1,21 @@
+{
+  "name": "token-2022-mint",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@metaplex-foundation/js": "^0.17.5",
+    "@metaplex-foundation/mpl-token-metadata": "^2.8.3",
+    "@solana/spl-token": "^0.3.9",
+    "@solana/web3.js": "^1.87.6",
+    "axios": "^1.6.2",
+    "bs58": "^5.0.0",
+    "https": "^1.0.0",
+    "node-cron": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/node-cron": "^3.0.11",
+    "dotenv": "^16.3.2"
+  }
+}
